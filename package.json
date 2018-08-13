@@ -9,7 +9,11 @@
     "node",
     "npm",
     "package",
-    "starter"
+    "json",
+    "json-server",
+    "server",
+    "typescript",
+    "model"
   ],
   "license": "WTFPL",
   "author": "Angular Tecnologias <dev@angularlabs.com.br>",
