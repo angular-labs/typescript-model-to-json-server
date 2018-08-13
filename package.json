@@ -1,6 +1,6 @@
 {
   "name": "typescript-model-to-json-server",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Generate json-server database from typescript models",
   "keywords": [
     "es2015",
