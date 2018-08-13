@@ -4,6 +4,12 @@ Generate [json-server](https://github.com/typicode/json-server) databases from t
 
 ## Usage
 
+Install the package
+```
+npm install -g typescript-model-to-json-server
+```
+
+
 Let's suppose we have a model like:
 
 ```
