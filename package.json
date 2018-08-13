@@ -1,5 +1,5 @@
 {
-  "name": "tiny-package-starter",
+  "name": "typescript-model-to-json-server",
   "version": "0.0.1",
   "description": "Generate json-server database from typescript models",
   "keywords": [
@@ -11,7 +11,7 @@
     "package",
     "starter"
   ],
-  "license": "MIT",
+  "license": "WTFPL",
   "author": "Rafael Corradini da Cunha <rafacunhadini@gmail.com>",
   "files": [
     "bin",
@@ -22,7 +22,7 @@
   "bin": {
     "model-json": "bin/command.js"
   },
-  "repository": "gabmontes/tiny-package-starter",
+  "repository": "angular-labs/typescript-model-to-json-server",
   "scripts": {
     "lint": "npm run lint:lib && npm run lint:cli",
     "lint:cli": "eslint cli",
