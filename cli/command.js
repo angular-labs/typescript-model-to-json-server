@@ -36,8 +36,8 @@ const argv = yargs
   .require(1, 'Missing <model> argument')
   .argv
 
-const modelPath = path.join(__dirname, `${argv._[0]}`);
-const jsonPath = path.join(__dirname, `${argv.json}`);
+const modelPath = path.join(process.cwd(), `${argv._[0]}`);
+const jsonPath = path.join(process.cwd(), `${argv.json}`);
 const inserts = Number(argv.inserts);
 const clean = argv.clean;
 
