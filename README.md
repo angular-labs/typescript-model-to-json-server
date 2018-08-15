@@ -75,4 +75,4 @@ Examples:
   model-json user.model.ts --json=db.json --inserts=3
 ```
 
-PS: Does not generating depth properties yet(PR are welcome).
+PS: Does not generate depth properties yet(PR are welcome).
