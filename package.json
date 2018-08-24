@@ -1,6 +1,6 @@
 {
   "name": "typescript-model-to-json-server",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "description": "Generate json-server database from typescript models",
   "keywords": [
     "mock",
@@ -40,6 +40,7 @@
     "babel-runtime": "^6.11.6",
     "core-js": "^2.4.1",
     "lodash": "^4.17.10",
+    "pluralize": "^7.0.0",
     "yargs": "^12.0.1"
   },
   "devDependencies": {

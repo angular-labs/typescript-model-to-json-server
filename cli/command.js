@@ -2,7 +2,11 @@
 
 const yargs = require('yargs');
 const path = require('path');
-const { modelToArray, sendToJson } = require('./../lib');
+const {
+  modelToArray,
+  sendToJson, clearFile,
+  makeRelationship
+} = require('./../lib');
 const pkg = require('./../package.json');
 
 
@@ -11,18 +15,22 @@ const argv = yargs
   .usage('$0 [options] <source>')
   .options({
     json: {
-          alias: 'j',
-          description: 'Set json path',
-          default: 'db.json'
+      alias: 'j',
+      description: 'Set json path',
+      default: 'db.json'
     },
     inserts: {
-          alias: 'i',
-          description: 'Set the number of random inserts',
-          default: 5
+      alias: 'i',
+      description: 'Set the number of random inserts',
+      default: 5
     },
     clean: {
-          alias: 'c',
-          description: 'Clean json before generating'
+      alias: 'c',
+      description: 'Clean json before generating'
+    },
+    replace: {
+      alias: 'r',
+      description: 'Replace objects already generated from model.'
     }
   })
   .boolean('clean')
@@ -36,11 +44,19 @@ const argv = yargs
   .require(1, 'Missing <model> argument')
   .argv
 
-const modelPath = path.join(process.cwd(), `${argv._[0]}`);
 const jsonPath = path.join(process.cwd(), `${argv.json}`);
 const inserts = Number(argv.inserts);
+const replace = argv.replace;
 const clean = argv.clean;
 
-let attrs = modelToArray(modelPath);
+if (clean) clearFile(jsonPath);
 
-sendToJson(attrs, inserts, clean, jsonPath, argv._[0]);
+for(let i = 0; i < argv._.length; i++) {
+  const modelPath = path.join(process.cwd(), `${argv._[i]}`);
+
+  let attrs = modelToArray(modelPath);
+
+  sendToJson(attrs, inserts, replace, jsonPath, argv._[i]);
+}
+
+makeRelationship(jsonPath);
