@@ -34,6 +34,7 @@ const argv = yargs
     }
   })
   .boolean('clean')
+  .boolean('replace')
   .help('help')
   .alias('help', 'h')
   .version(pkg.version)
